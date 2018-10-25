@@ -11,3 +11,9 @@ webpack.server.config.js
 yarn.lock
 index.html
 package-lock.json
+config/
+tslint.json
+tsconfig.json
+package-lock.json
+.history/
+.vscode/

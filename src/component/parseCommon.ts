@@ -10,7 +10,7 @@ const _HtmlWebpackPlugin = require('html-webpack-plugin');
 export default function parseCommon(config: IConfig) {
     const commonConfig = {
         entry: {
-            index: path.resolve(__dirname, config.entryScript),
+            index: path.resolve(config.dirname, config.entryScript),
         },
         resolve: {
             extensions: [ '.webpack.js', '.ts', '.tsx', '.js' ],
@@ -32,7 +32,7 @@ export default function parseCommon(config: IConfig) {
               chunks: 'all',
               excludeChunks: [],
               chunksSortMode: 'auto',
-              template: path.resolve(__dirname, config.entryHtml),
+              template: path.resolve(config.dirname, config.entryHtml),
             }),
         ],
         module: {

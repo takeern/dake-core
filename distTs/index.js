@@ -1,5 +1,6 @@
-import parseConfig from './component/main';
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const main_1 = require("./component/main");
 const config = {
     entryScript: '../../src/index',
     entryHtml: '../../src/index.html',
@@ -9,10 +10,4 @@ const config = {
     isTs: false,
     outPutName: 'index.js',
 };
-
-// console.log(parseConfig());
-
-export default parseConfig;
-// need pathname
-
-// 如何从异步跳回到同步
+exports.default = main_1.default;
