@@ -1,8 +1,8 @@
 {
   "name": "duck-core",
-  "version": "1.0.8",
+  "version": "1.0.10",
   "description": "",
-  "main": "index.js",
+  "main": "distTs/index.js",
   "author": "",
   "license": "ISC",
   "dependencies": {
