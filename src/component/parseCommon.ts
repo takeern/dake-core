@@ -13,7 +13,7 @@ export default function parseCommon(config: IConfig) {
             index: path.resolve(config.dirname, config.entryScript),
         },
         resolve: {
-            extensions: [ '.webpack.js', '.ts', '.tsx', '.js' ],
+            extensions: [ '.webpack.js', '.ts', '.tsx', '.js', '.jsx' ],
             alias: {
               'react': 'react/cjs/react.production.min.js',
               'react-dom': 'react-dom/cjs/react-dom.production.min.js',
