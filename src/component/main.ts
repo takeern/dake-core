@@ -26,8 +26,10 @@ function parseConfig(config: IConfig) {
     const commonConfig = parseCommon(mergeConfig);
     const devConfig = merge(parseDev(mergeConfig), commonConfig);
     const prodConfig = merge(parseProd(mergeConfig), commonConfig);
-
-    return { devConfig, prodConfig };
+    const servConfig = merge(prodConfig, {
+        target: 'node'
+    })
+    return { devConfig, prodConfig, servConfig };
 }
 
 export default parseConfig;
