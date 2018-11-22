@@ -8,7 +8,7 @@ const _OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 function parseProd(config) {
     const prodConfig = {
         mode: 'production',
-        stats: 'normal',
+        stats: 'minimal',
         target: 'web',
         output: {
             filename: '[name].js',
