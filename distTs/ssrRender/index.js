@@ -9,4 +9,4 @@ const json = {
         'vendors~index.js'
     ]
 };
-console.log(ssrRender_1.default(json));
+exports.default = ssrRender_1.default;

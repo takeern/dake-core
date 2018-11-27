@@ -9,4 +9,4 @@ const json = {
     ]
 };
 
-console.log(ssrRender(json))
+export default ssrRender;

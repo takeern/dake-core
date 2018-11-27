@@ -9,19 +9,23 @@ import parseCommon from './parseCommon';
 import parseDev from './parseDev';
 import parseProd from './parseProd';
 
+const portfinder = require('portfinder');
+
 const initConfig: Object = {
     entryScript: '../../src/index',
     entryHtml: '../../src/index.html',
     output: '../dist',
-    port: 8888,
+    port: 8080,
     host: 'localhost',
     isTs: false,
     outPutName: 'index.js',
 };
 
-function parseConfig(config: IConfig) {
+async function parseConfig(config: IConfig) {
     const mergeConfig = {...initConfig, ...config};
     config.entryScript += config.isTs ? '.js' : '.ts';
+    portfinder.basePort = mergeConfig.port;
+    mergeConfig.port = await portfinder.getPortPromise();
 
     const commonConfig = parseCommon(mergeConfig);
     const devConfig = merge(parseDev(mergeConfig), commonConfig);

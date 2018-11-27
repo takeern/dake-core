@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const path = require('path');
 const _UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const _MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const _SsrClientList = require('../../plugins/ssrClient.js');
+const _SsrClientList = require('../plugins/ssrClient.js');
 const _OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 function parseProd(config) {
     const prodConfig = {
