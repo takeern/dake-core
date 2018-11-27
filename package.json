@@ -1,10 +1,13 @@
 {
   "name": "duck-core",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "",
   "main": "distTs/main.js",
   "author": "",
   "license": "ISC",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha -r ./node_modules/ts-node/register test/*.ts"
+  },
   "dependencies": {
     "@types/node": "^10.12.9",
     "babel-loader": "8.0.4",
@@ -24,8 +27,11 @@
     "portfinder": "^1.0.19"
   },
   "devDependencies": {
+    "@types/mocha": "^5.2.5",
+    "chai": "^4.2.0",
     "mocha": "^5.2.0",
-    "should": "^13.2.3",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.6",
     "webpack-cli": "^3.1.2"
   }
 }

@@ -7,7 +7,7 @@ function parseJson(jsonConfig) {
     };
     jsonConfig.filename.map(item => {
         if (!jsonConfig.isAbsolutePath) {
-            item = jsonConfig.publicPath + item;
+            item = jsonConfig.publicPath + '/' + item;
         }
         if (item.match(/\.(js)$/)) {
             json.js.unshift(item);
