@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const parseJson_1 = require("./parseJson");
-function ssrRender(jsonConfig, body = ' ') {
+function ssrRender(jsonConfig, body = ' ', initState) {
     const jsCss = parseJson_1.default(jsonConfig);
     const jsStr = jsCss.js.reduce((p, n) => {
         return p + `<script src=${n} type=text/javascript></script>`;
@@ -17,7 +17,12 @@ function ssrRender(jsonConfig, body = ' ') {
         </head>
         ${cssStr}
         <body>
-        ${body}
+            <div class='server-app'>
+            <script>
+                window.__initState__ = ${JSON.stringify(initState)};
+            </script>
+            ${body}
+            </div>
         </body>
         ${jsStr}
     </html>

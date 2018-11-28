@@ -3,7 +3,7 @@ import parseJson from './parseJson';
 //interface
 import {IJsonConfig} from '../interface/jsonConfig'
 
-export default function ssrRender(jsonConfig: IJsonConfig, body = ' ') {
+export default function ssrRender(jsonConfig: IJsonConfig, body = ' ', initState: object) {
     const jsCss = parseJson(jsonConfig);
     const jsStr = jsCss.js.reduce((p, n)=>{
         return p + `<script src=${n} type=text/javascript></script>`;
@@ -19,7 +19,12 @@ export default function ssrRender(jsonConfig: IJsonConfig, body = ' ') {
         </head>
         ${cssStr}
         <body>
-        ${body}
+            <div class='server-app'>
+            <script>
+                window.__initState__ = ${JSON.stringify(initState)};
+            </script>
+            ${body}
+            </div>
         </body>
         ${jsStr}
     </html>
