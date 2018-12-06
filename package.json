@@ -2,7 +2,7 @@
   "name": "duck-core",
   "version": "1.0.22",
   "description": "",
-  "main": "distTs/main.js",
+  "main": "src/main.ts",
   "author": "",
   "license": "ISC",
   "scripts": {
