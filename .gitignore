@@ -189,3 +189,4 @@ pip-log.txt
 dist/
 release/
 .history
+distTs/
