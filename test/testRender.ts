@@ -11,7 +11,7 @@ describe('test ssr parseJson', function() {
                 'index.css',
                 'index.js',
                 'vendors~index.js'
-            ]
+            ],
         };
         const result = parseJson(json);
 

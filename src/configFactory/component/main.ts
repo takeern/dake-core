@@ -31,8 +31,8 @@ async function parseConfig(config: IConfig) {
     const devConfig = merge(parseDev(mergeConfig), commonConfig);
     const prodConfig = merge(parseProd(mergeConfig), commonConfig);
     const servConfig = merge(prodConfig, {
-        target: 'node'
-    })
+        target: 'node',
+    });
     return { devConfig, prodConfig, servConfig };
 }
 
