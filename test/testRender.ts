@@ -9,20 +9,21 @@ describe('test ssr parseJson', function() {
             'isAbsolutePath': true,
             'filename': [
                 'index.css',
+                'vendors~index.css',
                 'index.js',
                 'vendors~index.js'
             ],
         };
         const result = parseJson(json);
-
         expect(result).to.deep.equal({
             css: [
+                'vendors~index.css',
                 'index.css',
             ],
             js: [
                 'vendors~index.js',
                 'index.js',
-            ]
+            ],
         });
     });
 
@@ -34,7 +35,7 @@ describe('test ssr parseJson', function() {
                 'index.css',
                 'index.js',
                 'vendors~index.js'
-            ]
+            ],
         };
 
         const result = parseJson(json);
@@ -46,7 +47,7 @@ describe('test ssr parseJson', function() {
             js: [
                 '/dist/vendors~index.js',
                 '/dist/index.js',
-            ]
+            ],
         });
     });
 
