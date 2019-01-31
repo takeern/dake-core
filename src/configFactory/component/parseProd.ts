@@ -43,7 +43,7 @@ export default function parseProd(config: IConfig) {
                 // Options similar to the same options in webpackOptions.output
                 // both options are optional
                 filename: '[name].css',
-                chunkFilename: '[id].css',
+                chunkFilename: '[name].css',
                 hot: false, // optional as the plugin cannot automatically detect if you are using HOT, not for production use
                 orderWarning: true, // Disable to remove warnings about conflicting order between imports
               }
