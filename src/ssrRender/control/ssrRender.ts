@@ -1,14 +1,14 @@
 import parseJson from './parseJson';
 
-//interface
-import {IJsonConfig} from '../interface/jsonConfig'
+// interface
+import { IJsonConfig } from '../interface/jsonConfig';
 
 export default function ssrRender(jsonConfig: IJsonConfig, body = ' ', initState: object) {
     const jsCss = parseJson(jsonConfig);
-    const jsStr = jsCss.js.reduce((p, n)=>{
+    const jsStr = jsCss.js.reduce((p, n) => {
         return p + `<script src=${n} type=text/javascript></script>`;
     }, ' ');
-    const cssStr = jsCss.css.reduce((p, n)=>{
+    const cssStr = jsCss.css.reduce((p, n) => {
         return p + `<link href=${n} rel=stylesheet>`;
     }, ' ');
     const html = `
@@ -20,12 +20,12 @@ export default function ssrRender(jsonConfig: IJsonConfig, body = ' ', initState
         ${cssStr}
         <body>
             <div class='server-app'>
-            <script>
-                window.__initState__ = ${JSON.stringify(initState)};
-            </script>
             ${body}
             </div>
         </body>
+        <script>
+            window.__initState__ = ${JSON.stringify(initState)};
+        </script>
         ${jsStr}
     </html>
     `;
