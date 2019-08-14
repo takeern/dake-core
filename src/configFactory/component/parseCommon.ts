@@ -14,12 +14,6 @@ export default function parseCommon(config: IConfig) {
         },
         resolve: {
             extensions: [ '.webpack.js', '.ts', '.tsx', '.js', '.jsx' ],
-            alias: {
-              'react': 'react/cjs/react.production.min.js',
-              'react-dom': 'react-dom/cjs/react-dom.production.min.js',
-              'redux': 'redux/dist/redux.min.js',
-              'react-redux': 'react-redux/dist/react-redux.min.js',
-            },
         },
         plugins: [
             new _HtmlWebpackPlugin({
